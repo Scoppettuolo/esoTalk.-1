@@ -1,0 +1,629 @@
+/* =========================================================
+   esoTalk 1.0.0 — flat · square · lightweight
+   Metro / Windows 8 inspired, no rounded chrome
+   ========================================================= */
+
+:root {
+  --bg: #e6e6e6;
+  --surface: #ffffff;
+  --text: #1a1a1a;
+  --muted: #666666;
+  --line: #c8c8c8;
+  --accent: #0078d4;
+  --accent-dark: #005a9e;
+  --accent-light: #2b88d8;
+  --danger: #e81123;
+  --ok: #107c10;
+  --bar: #f2f2f2;
+  --hdr: #ffffff;
+}
+
+/* ----- Global ----- */
+body {
+  background: var(--bg);
+  color: var(--text);
+  font-family: "Segoe UI", system-ui, -apple-system, sans-serif;
+  -webkit-font-smoothing: antialiased;
+}
+a { color: var(--accent); }
+a:hover { color: var(--accent-dark); }
+small, dt { color: var(--muted); }
+.highlight { background: #fff3a0; }
+* , *::before, *::after { border-radius: 0 !important; }
+
+/* ----- Header ----- */
+#hdr {
+  background: var(--hdr);
+  border-bottom: 1px solid var(--line);
+  box-shadow: none;
+}
+#hdr h1 a { color: var(--text); font-weight: 600; letter-spacing: -0.02em; }
+#hdr h1 a:hover { text-decoration: none; }
+#hdr h1 a:hover span { text-decoration: underline; }
+#hdr p#stats, #hdr #forumTitle, #hdr #forumDescription {
+  text-shadow: none;
+  color: var(--muted);
+}
+#hdr #search { box-shadow: none; }
+
+/* ----- User bar ----- */
+#bar {
+  background: var(--bar);
+  border-top: 1px solid var(--line);
+  border-bottom: 2px solid var(--accent);
+  box-shadow: none;
+  text-shadow: none;
+  min-height: 36px;
+  padding: 6px 12px;
+}
+#bar strong a { color: var(--text); font-weight: 600; }
+#bar li a { color: var(--text); }
+#bar input.text, #displayAvatars select {
+  box-shadow: none;
+  border: 1px solid var(--line);
+  background: #fff;
+  color: var(--text);
+}
+#bar #login .button,
+#bar #logout .button {
+  background: var(--accent);
+  border: 1px solid var(--accent-dark);
+  box-shadow: none;
+}
+#bar #login .button:hover,
+#bar #logout .button:hover {
+  background: var(--accent-light);
+  box-shadow: none;
+}
+#bar #login .button:active,
+#bar #logout .button:active {
+  background: var(--accent-dark);
+  box-shadow: none;
+}
+#bar #login .button input,
+#bar #logout .button input {
+  color: #fff;
+  text-shadow: none;
+  font-weight: 600;
+}
+#bar li:not(li:first-child) > .vl::after,
+#bar li:not(li:last-child) > .vr::after {
+  background: var(--line);
+  height: 20px;
+  top: -2px;
+}
+
+/* RSS */
+#rss .button {
+  background: var(--accent);
+  border: 1px solid var(--accent-dark);
+  box-shadow: none;
+}
+
+/* ----- Body / wrapper ----- */
+#wrapper { background: transparent; }
+#body {
+  background: var(--surface);
+  border: 1px solid var(--line);
+  box-shadow: none;
+  padding: 16px;
+}
+
+/* ----- Search / gambits ----- */
+#gambits a, .gambit {
+  border: 1px solid transparent;
+  padding: 1px 4px;
+}
+#gambits a:hover { background: #f0f0f0; }
+#searchForm input.text {
+  border: 1px solid var(--line);
+  box-shadow: none;
+  background: #fff;
+}
+#searchForm input.text:focus {
+  border-color: var(--accent);
+  outline: 2px solid rgba(0, 120, 212, 0.25);
+  outline-offset: 0;
+}
+
+/* Results table */
+.c th {
+  background: #f0f0f0;
+  border-bottom: 2px solid var(--line);
+  color: var(--muted);
+  text-transform: uppercase;
+  font-size: 11px;
+  letter-spacing: 0.04em;
+  text-shadow: none;
+  font-weight: 600;
+}
+#searchResults tbody > tr:nth-of-type(even) { background: #f7f7f7; }
+#searchResults tbody > tr:hover { background: #eef6fc; }
+tr.starred td {
+  background: #e8f4fc;
+  border-color: var(--accent);
+  border-top: 1px solid var(--accent);
+}
+
+/* Labels — square chips */
+.sticky { background: #ff8c00; color: #fff; }
+.private { background: #5c2d91; color: #fff; }
+.locked { background: #666; color: #fff; }
+.draft { background: var(--ok); color: #fff; }
+.label, .sticky, .private, .locked, .draft {
+  border-radius: 0 !important;
+  padding: 1px 6px;
+  font-size: 11px;
+  font-weight: 600;
+  text-transform: uppercase;
+  letter-spacing: 0.03em;
+}
+
+/* ----- Conversation header ----- */
+#cHdr {
+  background: #f4f4f4;
+  border: 1px solid var(--line);
+  border-image: none;
+  text-shadow: none;
+  padding: 12px;
+}
+#cInfo .editable {
+  border: 1px dashed var(--line);
+  box-shadow: none;
+}
+#cInfo .editable:focus {
+  background: #fff;
+  border: 1px solid var(--accent);
+  box-shadow: none;
+}
+#cTags a {
+  background: #ececec;
+  color: var(--text);
+  border: 1px solid var(--line);
+  padding: 1px 6px;
+}
+#cTags a:hover { background: #ddd; text-decoration: none; }
+
+/* Pagination */
+.pg .viewing div {
+  background: var(--accent);
+  border: 1px solid var(--accent-dark);
+  color: #fff;
+}
+.pg .unread { background: #fff3cd; color: #856404; }
+
+/* ----- Posts: square color panels ----- */
+.p {
+  border-style: solid;
+  border-width: 0;
+  box-shadow: none;
+  margin-bottom: 8px;
+}
+.p .hdr {
+  box-shadow: none;
+  border-bottom: 1px solid rgba(0,0,0,0.08);
+  font-weight: 500;
+}
+.p .hdr, .p .hdr small, .p .hdr a {
+  color: var(--hdr-text, #1a1a1a);
+  text-shadow: none;
+}
+.p .hdr .controls a {
+  background: rgba(0,0,0,0.08);
+  box-shadow: none;
+  border: 1px solid rgba(0,0,0,0.06);
+  padding: 1px 8px;
+  font-size: 12px;
+}
+.p .hdr .controls a:hover {
+  background: #fff;
+  text-decoration: none;
+}
+.p .body {
+  text-shadow: none;
+  line-height: 1.5;
+}
+.p.deleted {
+  background: #f0f0f0;
+  border-color: #f0f0f0;
+  box-shadow: none;
+  opacity: 0.85;
+}
+
+/* Color tokens — original esoTalk pastels (same as classic Plastic)
+   Side strip = --profile-color; body = lighter --post-color */
+.c1 { --profile-color:#dfdfdf; --post-color:#eeeeee; --hdr-text:#1a1a1a; }
+.c2 { --profile-color:#d2d2d2; --post-color:#eeeeee; --hdr-text:#1a1a1a; }
+.c3 { --profile-color:#cf9eff; --post-color:#f7eeff; --hdr-text:#1a1a1a; }
+.c4 { --profile-color:#b29cff; --post-color:#f1edff; --hdr-text:#1a1a1a; }
+.c5 { --profile-color:#a5b1ff; --post-color:#eff1ff; --hdr-text:#1a1a1a; }
+.c6 { --profile-color:#adccff; --post-color:#f0f6ff; --hdr-text:#1a1a1a; }
+.c7 { --profile-color:#b4e7ff; --post-color:#f1faff; --hdr-text:#1a1a1a; }
+.c8 { --profile-color:#93fff1; --post-color:#ecfffc; --hdr-text:#1a1a1a; }
+.c9 { --profile-color:#a4ffd4; --post-color:#effff8; --hdr-text:#1a1a1a; }
+.c10 { --profile-color:#93ffae; --post-color:#ecfff1; --hdr-text:#1a1a1a; }
+.c11 { --profile-color:#b5ff97; --post-color:#f3ffec; --hdr-text:#1a1a1a; }
+.c12 { --profile-color:#d4ff95; --post-color:#f8ffec; --hdr-text:#1a1a1a; }
+.c13 { --profile-color:#ebff99; --post-color:#fbffed; --hdr-text:#1a1a1a; }
+.c14 { --profile-color:#fff391; --post-color:#fffdeb; --hdr-text:#1a1a1a; }
+.c15 { --profile-color:#ffdb75; --post-color:#fff9e7; --hdr-text:#1a1a1a; }
+.c16 { --profile-color:#ffcd92; --post-color:#fff6ec; --hdr-text:#1a1a1a; }
+.c17 { --profile-color:#ffc19b; --post-color:#fff4ed; --hdr-text:#1a1a1a; }
+.c18 { --profile-color:#ffa3af; --post-color:#ffeef1; --hdr-text:#1a1a1a; }
+.c19 { --profile-color:#ffafdc; --post-color:#fff0f8; --hdr-text:#1a1a1a; }
+.c20 { --profile-color:#eba5ff; --post-color:#fcefff; --hdr-text:#1a1a1a; }
+.c21 { --profile-color:#c0c0db; --post-color:#f4f4f8; --hdr-text:#1a1a1a; }
+.c22 { --profile-color:#abcbcd; --post-color:#f0f5f6; --hdr-text:#1a1a1a; }
+.c23 { --profile-color:#b8d9c2; --post-color:#f2f8f4; --hdr-text:#1a1a1a; }
+.c24 { --profile-color:#c8d9b8; --post-color:#f6f8f3; --hdr-text:#1a1a1a; }
+.c25 { --profile-color:#e5e2ba; --post-color:#fafaf2; --hdr-text:#1a1a1a; }
+.c26 { --profile-color:#e7d0bb; --post-color:#fbf7f3; --hdr-text:#1a1a1a; }
+.c27 { --profile-color:#cdc5bd; --post-color:#f6f5f3; --hdr-text:#1a1a1a; }
+
+.c tr td.avatar img, .hdr, .p .hdr, #palette a {
+  background: var(--profile-color);
+}
+.p {
+  background: var(--post-color);
+  border-color: var(--profile-color);
+}
+
+/* Header text follows contrast token (pastels → dark text) */
+.p .hdr, .p .hdr a, .p .hdr small {
+  color: var(--hdr-text, #1a1a1a) !important;
+  text-shadow: none;
+}
+
+/* ----- Reply ----- */
+#reply .body input.text,
+#reply .body textarea,
+.p .body input.text,
+.p .body textarea {
+  box-shadow: none;
+  border: 1px solid var(--line);
+  background: #fff;
+}
+#reply .body textarea:focus,
+.p .body textarea:focus {
+  border-color: var(--accent);
+  outline: 2px solid rgba(0, 120, 212, 0.2);
+}
+.editButtons .big {
+  border-radius: 0 !important;
+  border: 1px solid var(--accent-dark);
+  background: var(--accent);
+}
+.editButtons .big input { color: #fff; text-shadow: none; font-weight: 600; }
+.editButtons .button { border-radius: 0 !important; }
+
+/* Formatting toolbar */
+.p .hdr .controls .formattingButtons a:hover { background: #fff; }
+.p .controls .formattingButtons a {
+  border: 1px solid transparent;
+  padding: 2px 6px;
+}
+.p .controls .formattingButtons a:hover {
+  border-color: rgba(0,0,0,0.12);
+  background: #fff;
+}
+
+/* Quotes / code */
+blockquote {
+  background: rgba(0,0,0,0.04);
+  border-left: 3px solid var(--line);
+  box-shadow: none;
+}
+pre, code, .fixed {
+  background: #f5f5f5;
+  border: 1px solid var(--line);
+}
+
+/* ----- Messages ----- */
+#loading {
+  background: var(--accent);
+  color: #fff;
+  border: none;
+  box-shadow: none;
+  font-weight: 600;
+}
+.msg {
+  border: none;
+  box-shadow: none;
+  border-left: 4px solid var(--accent);
+}
+.success { background: #dff6dd; border-left-color: var(--ok); }
+.warning { background: #fde7e9; border-left-color: var(--danger); color: #5a0000; }
+.warning .close { border-color: #5a0000; color: #5a0000; }
+
+/* ----- Forms / buttons ----- */
+input.text, textarea, select {
+  background: #fff;
+  border: 1px solid var(--line);
+  box-shadow: none;
+  border-radius: 0 !important;
+}
+input.text:focus, textarea:focus, select:focus {
+  border-color: var(--accent);
+  outline: 2px solid rgba(0, 120, 212, 0.2);
+  outline-offset: 0;
+}
+fieldset {
+  border: 1px solid var(--line);
+  box-shadow: none;
+  background: #fafafa;
+}
+legend {
+  color: var(--text);
+  font-weight: 600;
+  text-shadow: none;
+}
+
+.button, .buttonSmall, .buttonDisabled {
+  border-radius: 0 !important;
+  box-shadow: none !important;
+  text-shadow: none !important;
+}
+.buttonSmall, .buttonSmall:active, .buttonSmall:hover {
+  background: #f0f0f0;
+  color: var(--text);
+  border: 1px solid var(--line);
+}
+.buttonSmall:hover {
+  background: #e5e5e5;
+  box-shadow: none;
+}
+.buttonSmall input { color: var(--text); text-shadow: none; }
+
+/* Primary actions */
+#bar .button, #bar .button input,
+.button, input.button {
+  border-radius: 0 !important;
+}
+
+/* ----- Admin ----- */
+#admin {
+  border: 1px solid var(--line);
+  border-image: none;
+  background: #fff;
+}
+#admin .menu { border-right: 1px solid var(--line); }
+#admin .menu li a {
+  text-decoration: none;
+  border: 1px solid var(--line);
+  color: var(--text);
+  background: #f5f5f5;
+  box-shadow: none;
+  text-shadow: none;
+}
+#admin .menu li.active a,
+#admin .menu li:not(.active) a:hover {
+  background: #fff;
+  border-color: var(--accent);
+  clip-path: none;
+}
+#admin .inner { border-left: 1px solid var(--line); }
+#admin .stats li { border-bottom: 1px solid var(--line); }
+
+/* Plugins / skins lists */
+#plugins li, #skins a { border-radius: 0 !important; }
+#plugins .controls a, #plugins .toggle {
+  background: #dff6dd;
+  color: var(--ok);
+  border-radius: 0 !important;
+}
+#skins .preview {
+  background: #f0f0f0;
+  border: 1px solid var(--line);
+  border-radius: 0 !important;
+}
+#skins a:hover .preview, #skins .enabled .preview {
+  border-color: var(--accent);
+}
+
+/* Profile */
+.profile .form li {
+  border-top: 1px solid #fff;
+  border-bottom: 1px solid var(--line);
+}
+
+/* Footer */
+#ftr-content {
+  border-top: 1px solid var(--line);
+  color: var(--muted);
+  font-size: 12px;
+}
+#ftr a { color: var(--accent); }
+
+/* External link icon — keep square feel */
+a.external::after {
+  filter: none;
+  -webkit-filter: none;
+  opacity: 0.7;
+}
+
+/* Avatars: hard edges */
+img.avatar, div.avatar img,
+.p div.avatar img,
+.c td.avatar img {
+  border-radius: 0 !important;
+  box-shadow: none !important;
+  filter: none !important;
+  -webkit-filter: none !important;
+}
+
+/* Links in bar look like square pills */
+#bar li a span.button {
+  border: 1px solid var(--line);
+  background: #fff;
+  padding: 2px 8px;
+}
+#bar li a span.button:hover {
+  border-color: var(--accent);
+  background: #eef6fc;
+}
+
+/* Mobile */
+@media only screen and (max-width: 720px) {
+  #body { border-left: 0; border-right: 0; padding: 12px; }
+  #bar { padding: 8px; }
+}
+
+
+/* ----- Fixes: pagination not clipped, star alignment ----- */
+.pg {
+  align-items: stretch;
+  overflow: visible;
+}
+.pg li.left,
+.pg li.right {
+  flex: 0 0 auto;
+  white-space: nowrap;
+}
+.pg li.left a,
+.pg li.right a {
+  white-space: nowrap;
+  overflow: visible;
+  text-overflow: clip;
+  padding: 0 10px;
+  line-height: 22px;
+}
+.pg li.middle {
+  flex: 1 1 auto;
+  min-width: 0;
+  overflow: hidden;
+}
+.pg .viewing div {
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+  line-height: 22px;
+}
+
+/* Star in conversation list: vertical center */
+.c td.star {
+  vertical-align: middle;
+  width: 2em;
+  line-height: 1;
+}
+.c td.star a.star0,
+.c td.star a.star1 {
+  display: inline-block;
+  vertical-align: middle;
+  margin: 0;
+  margin-left: 2px;
+  line-height: 0.85;
+  height: 0.85em;
+  width: 0.85em;
+  font-size: 320%;
+  overflow: hidden;
+  position: relative;
+  top: 1px;
+}
+/* Conversation header star */
+#cInfo .star0, #cInfo .star1 {
+  font-size: 500%;
+  height: 0.4em;
+  width: 0.4em;
+  line-height: 0.8;
+  margin: 0 6px 0 0;
+  padding: 2px 0 0 0;
+  vertical-align: middle;
+}
+.starInline {
+  margin-bottom: -2px !important;
+  vertical-align: middle;
+  line-height: 1;
+  font-size: 280%;
+}
+
+/* Palette preview text contrast helper classes (settings page) */
+#palette a {
+  color: #1a1a1a;
+  box-shadow: inset 0 0 0 1px rgba(0,0,0,0.08);
+}
+
+
+/* ----- Compact reply box that grows on focus/type ----- */
+#reply .body textarea,
+#reply-textarea,
+.p .body textarea.auto-expand,
+textarea.auto-expand {
+  min-height: 4.5em;
+  max-height: 28em;
+  height: auto;
+  resize: vertical;
+  overflow-y: auto;
+  transition: min-height .15s ease, box-shadow .15s ease, border-color .15s ease;
+  line-height: 1.45;
+  box-sizing: border-box;
+  width: 100%;
+}
+#reply .body textarea:focus,
+#reply-textarea:focus,
+textarea.auto-expand:focus {
+  min-height: 10em;
+  border-color: var(--accent);
+  box-shadow: 0 0 0 2px rgba(0, 120, 212, 0.2);
+}
+#reply.reply-expanded .body textarea,
+#reply.reply-expanded #reply-textarea {
+  min-height: 12em;
+}
+
+/* Accessibility */
+.skip-link {
+  position: absolute;
+  left: -9999px;
+  top: 0;
+  background: #0078d4;
+  color: #fff;
+  padding: 8px 12px;
+  z-index: 10000;
+}
+.skip-link:focus {
+  left: 8px;
+  top: 8px;
+}
+#content:focus { outline: none; }
+
+/* ----- Collapsed reply composer parity with modern interaction ----- */
+#reply.replyPlaceholder .parts {
+  cursor:text;
+}
+#reply.replyPlaceholder .hdr .controls {
+  display:none;
+}
+#reply.replyPlaceholder .body,
+#reply.replyPlaceholder .editButtons {
+  display:block;
+  max-height:0;
+  opacity:0;
+  overflow:hidden;
+  padding-top:0;
+  padding-bottom:0;
+  pointer-events:none;
+}
+#reply.replyPlaceholder .hdr {
+  min-height:32px;
+  padding-top:9px;
+  padding-bottom:9px;
+  cursor:text;
+}
+#reply.replyPlaceholder .hdr .pInfo h3 {
+  color:#777;
+  font-size:100%;
+  font-style:italic;
+  font-weight:normal;
+}
+#reply.reply-expanded .body,
+#reply.reply-expanded .editButtons {
+  display:block;
+  max-height:2000px;
+  opacity:1;
+  overflow:visible;
+  pointer-events:auto;
+}
+#reply .body,
+#reply .editButtons {
+  transition:max-height .25s ease, opacity .15s ease, padding .25s ease;
+}

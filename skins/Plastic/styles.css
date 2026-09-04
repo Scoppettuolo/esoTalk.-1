@@ -1,0 +1,399 @@
+@media all {
+/* Main tags */
+body {background:linear-gradient(#e4e5ea, #fff 70%); background-repeat:no-repeat}
+
+/* Links */
+a.external {white-space:nowrap}
+a.external::after {content:''; height:10px; width:10px; margin-left:3px; background:url('data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHZpZXdCb3g9IjAgMCA5Ljk1MiA5Ljk4NSI+CiAgPHBhdGggZmlsbD0iIzAwZiIgZD0iTTkuNDQ5LjAwOEg1LjU1NHMuNTM3LjU0NS44NTIuODZjNi4wNjIgNi4wNDgtNS4xLTUuMDk1IDIuNjg2IDIuNjgyLjMxNS4zMTQuODYuODcyLjg2Ljg3Mkw5Ljk0MiAwcy0uMjE1LjAwOC0uNDkzLjAwOHoiLz4KICA8cGF0aCBmaWxsPSJub25lIiBzdHJva2U9IiMwMGYiIHN0cm9rZS1saW5lY2FwPSJzcXVhcmUiIHN0cm9rZS13aWR0aD0iMSIgZD0iTTE2LjcxLS42OGgtMy4wN3Y3LjUxNmg3LjQ4M1YzLjg2NW0tNC44Ni4zNDcgNS40Ni01LjQ2IiB0cmFuc2Zvcm09Im1hdHJpeCgxLjA3NDg4IDAgMCAxLjA3Mzg1IC0xNC4xNiAyLjE0NSkiLz4KPC9zdmc+') no-repeat center; background-size:contain; display:inline-block; -webkit-filter:drop-shadow(0 1px 0 #fff); filter:drop-shadow(0 1px 0 #fff)}
+a.external:hover:after {-webkit-filter:saturate(0) drop-shadow(0 1px 0 #fff); filter:saturate(0) drop-shadow(0 1px 0 #fff)}
+a.external:active:after {-webkit-filter:saturate(0) contrast(25%) drop-shadow(0 1px 0 #fff); filter:saturate(0) contrast(25%) drop-shadow(0 1px 0 #fff)}
+
+/* Misc */
+small, dt {color:#888}
+small a, dt a {color:#55f}
+#loading {background:#dcff52; border:solid #d4e58f; border-width:0 1px 1px 1px; box-shadow:rgba(0, 0, 0, 0.2) 0 0 3px; -webkit-box-shadow:rgba(0, 0, 0, 0.2) 0 0 3px}
+img.avatar, div.avatar img {-webkit-filter:drop-shadow(0 1px 0 rgba(255,255,255,0.5)); filter:drop-shadow(0 1px 0 rgba(255,255,255,0.5))}
+.enabled, #skins a:hover {background:#ffa}
+.disabled {color:#888}
+.disabled:hover {color:#888; text-decoration:none}
+.highlight {background:yellow}
+
+/* Header */
+#hdr {background:linear-gradient(#fff, #e4e5ea)}
+#hdr h1 a {color:#000}
+#hdr h1 a:hover {text-decoration:none}
+#hdr h1 a:hover span {text-decoration:underline}
+#hdr h1 img {-webkit-filter:drop-shadow(0 1px 0 #fff); filter:drop-shadow(0 1px 0 #fff)}
+#hdr p#stats, #hdr #forumTitle, #hdr #forumDescription {text-shadow:0 1px 0 #fff}
+#hdr #search {box-shadow:0 1px 0 #fff; border-bottom-right-radius:5px}
+
+/* User bar */
+#bar {background:linear-gradient(#fff, #d8d9e1); border-bottom:1px solid #ababab; border-top:1px solid #c1c1c1; box-shadow:0 2px 3px -1px #ababab; text-shadow:#fff 0 1px}
+#bar strong a {color:#000}
+#bar input.text, #displayAvatars select {box-shadow:inset 0 1px 3px #ccc, 0 1px 0 #ffffff}
+#displayAvatars select {color:#000; background:#fff; border:1px solid #bbb; border-radius:0}
+/* Login and logout buttons */
+#bar #login .button, #bar #logout .button {background:linear-gradient(#9dcade 25%, #44a2c9 50%, #1e77af 50%, #37dcee 100%); border:1px solid #1a6b9d; box-shadow:inset 0 1px 0 #eeeeee, 0 1px 0 #ffffff}
+#bar #login .button:hover, #bar #logout .button:hover {box-shadow:inset 0 0 0 2px rgba(255, 255, 255, 0.5),inset 0 1px 0 #eeeeee}
+#bar #login .button:active, #bar #logout .button:active {box-shadow:inset 0 0 25px 2px rgba(0, 0, 0, 0.25),inset 0 1px 0 #eeeeee}
+#bar #login .button input, #bar #logout .button input {color:#fff; text-shadow:#046b9e 0 -1px}
+/* Dividers */
+#bar li:not(li:first-child) > .vl {margin-left:4px}
+#bar li:not(li:last-child) > .vr {margin-right:4px}
+#bar li:not(li:first-child) > .vl::after {content:''; height:32px; width:1px; position:absolute; top:-6px; left:-4px; background:linear-gradient(to bottom, #c1c1c1, #ababab)}
+#bar li:not(li:last-child) > .vr::after {content:''; height:32px; width:1px; position:absolute; top:-6px; right:-4px; background:linear-gradient(to bottom, #c1c1c1, #ababab)}
+/* RSS button */
+#rss .button {background:url('data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHZpZXdCb3g9IjAgMCAxNzUgMTc1Ij4KICA8Y2lyY2xlIGN4PSIyNCIgY3k9IjE1MSIgcj0iMjQiIGZpbGw9IiNmZmYiLz4KICA8cGF0aCBmaWxsPSIjZmZmIiBkPSJNMTE2IDE3NUg4MkE4MiA4MiAwIDAgMCAwIDkzVjU5YTExNiAxMTYgMCAwIDEgMTE2IDExNnoiLz4KICA8cGF0aCBmaWxsPSIjZmZmIiBkPSJNMTQwIDE3NUExNDAgMTQwIDAgMCAwIDAgMzVWMGExNzUgMTc1IDAgMCAxIDE3NSAxNzV6Ii8+Cjwvc3ZnPgo=') no-repeat center/13px, linear-gradient(#fdc855 25%, #fa9f15 50%, #f87602 50%, #fdb522 100%); width:19px; border:1px solid #db5605; border-radius:5px}
+#rss .button input {visibility:hidden; color:#fff; text-shadow:#db5605 0 -1px}
+
+/* Body */
+#body {background:linear-gradient(#ecedee, #fff); background-repeat:no-repeat; background-size:100% 90px}
+#wrapper {border-top:0; border-bottom:0; border-left:1px solid; border-right:1px solid; border-image:linear-gradient(to bottom, #c1c1c1, #fff); border-image-slice:1; background:#fff}
+
+/* Tags & gambits */
+#tagArea {text-shadow:0 1px 0 #fff}
+#tags a {color:#777}
+#gambits a {color:#00f}
+
+/* Search form */
+#searchText {border-right:0}
+#submit {border-top-left-radius:0; border-bottom-left-radius:0}
+#reset {color:#bbb}
+#searchText:focus + .fr #reset {color:#555}
+#reset:hover, #searchText:focus ~ #reset:hover {text-decoration:none; color:#000}
+
+/* Messages */
+#messages {box-shadow:0 2px 5px 0 rgba(0,0,0,0.5)}
+#messages .msg #debugInfo {padding:5px; background:rgba(255,255,255,0.5); text-shadow:#fff 0 1px}
+.msg .close {border:1px solid #000; color:#000; text-decoration:none}
+.msg .close:hover {background:#fff; color:#000; text-decoration:none}
+.msg .close:active {background:#aaa}
+.msg {background:#ddd; text-shadow:rgba(255,255,255,0.5) 0 1px; box-shadow:inset 0 -1px 0 rgba(0, 0, 0, 0.2)}
+.info {background:linear-gradient(to bottom, #fde5a5, #fad163)}
+.success {background:#cf0}
+.warning {background:linear-gradient(to bottom, #e36c63, #c00); color:#fff; text-shadow:rgba(0,0,0,0.3) 0 -1px; box-shadow:inset 0 -1px 0 rgba(0, 0, 0, 0.3)}
+.warning a, .warning a:hover {color:#fff; text-decoration:underline}
+.warning .close {border-color:#fff; color:#fff}
+
+/* Stars */
+.star0 {color:#ccc}
+a.star0:hover {color:#fe7}
+.star1, a.star1:hover {color:#fc0}
+a.star0:active, a.star1:active {color:#e4b600}
+.starred td {background:#ffa}
+
+/* Conversation labels */
+.label {color:#fff; text-shadow:rgba(0,0,0,0.3) 0 -1px; border-bottom: 1px solid rgba(0,0,0,0.3)}
+.label, .locked {background:#999}
+.private {background:#7b00ad}
+.sticky {background:#f90}
+.draft {background:#0b2}
+/* Gambits */
+#gambits a.privateText {color:#7b00ad}
+#gambits a.stickyText {color:#f60}
+#gambits a.starredText {color:#efcb00}
+#gambits a.lockedText {color:#888}
+#gambits a.draftText {color:#0b2}
+
+/* Conversations table */
+.c tr {box-shadow:inset 0 1px 0 #ffffff; text-shadow:#ffffff 0 1px}
+.c thead > tr {text-shadow:rgba(255,255,255,0.5) 0 1px}
+.c th {background-color:#ddd; box-shadow:inset 0 -1px 0 rgba(0,0,0,0.2)}
+.c td {border-bottom:1px solid #ddd}
+.c strong a {color:#000}
+.c .author a, .c .lastPost a {color:#000}
+.c td.avatar img {box-shadow:#ffffff 0 1px}
+.c .p1 {color:#000}
+.c .p2 {color:#666}
+.c .p3 {color:#aaa}
+#newResults td {border:0}
+#more .msg {margin-top:-1px}
+#searchResults tbody > tr:nth-of-type(even) {background-color:#f4f4f4}
+
+/* Conversation header */
+#cHdr {text-shadow:0 1px 0 #fff}
+/* Info and title (left part) */
+#cInfo:not(.text) {border-style:none; border-width:1px}
+#cInfo .editable {border-style:dashed; border-width:1px; border-color:#bbb}
+#cInfo .editable:focus {background:#fff; border-style:solid; border-width:1px; border-color:#777; box-shadow:inset 0 1px 3px #ccc}
+#cTags a {background:#e4e4e4; color:#000}
+#cTags a:hover {background-color:#ccc; text-decoration:none}
+#cTags a:active {background-color:#888}
+/* Members allowed (right part) */
+#allowed a.d:hover {color:#f00; text-decoration:line-through}
+#addMember {border-right:0; border-top-right-radius:0; border-bottom-right-radius:0}
+#addMemberSubmit {border-top-left-radius:0; border-bottom-left-radius:0}
+
+/* Pagination */
+.pg {background:#fff}
+.pg li {border:1px solid #bbb; box-shadow:inset 0 1px 3px #ccc; text-shadow:#fff 0 1px}
+.pg li.middle {border-width:1px 0; clip-path:inset(0 0)}
+.pg li a {color:#000; border-right:1px solid #ccc; box-sizing:border-box}
+.pg li a:last-child {border-right:0}
+.pg li a.disabled {color:#888}
+.pg li.left a, .pg li.right a {background:#efefef; box-shadow:inset 0 1px 0 #fff, inset 0 -1px 0 #ddd}
+.pg li.left a:hover, .pg li.right a:hover {background:#fff; text-decoration:none}
+.pg li.left a:active, .pg li.right a:active {background:#ddd; box-shadow:none}
+.pg li a.disabled, .pg li a.disabled:hover, .pg li a.disabled:active {background:#efefef; box-shadow:inset 0 1px 0 #fff, inset 0 -1px 0 #ddd}
+.pg .viewing div {background:#d7eef4; box-shadow:inset 0 1px 0 #fff, inset 0 -1px 0 #b6cbd0, 0 1px 3px 1px #ccc; border:1px solid #879ec4}
+.pg .viewing:hover div {background:#e9f3f2}
+.pg .viewing:active div {background:#abcbe3; box-shadow:none}
+.pg .unread {background:#ffc; color:#f71}
+
+/* Conversation post */
+.p {border-style:solid; border-width:0; box-shadow:inset 0 -1px 0 rgba(0,0,0,0.1)}
+.p.l::after, .p.r::after {content:""; width:115px; height:2px; box-shadow:inset 0 -2px 0 rgba(0,0,0,0.2)}
+.p.l::after {float:left; margin:-2px 0 0 -115px}
+.p.r::after {float:right; margin:-2px -115px 0 0}
+.p .hdr {box-shadow:inset 0 -1px 0 rgba(0,0,0,0.2)}
+.p .hdr, .p .hdr small, .p .hdr a {color:#000; text-shadow:rgba(255,255,255,0.5) 0 1px}
+.p .hdr a.external::after {filter:saturate(0) drop-shadow(rgba(255,255,255,0.5) 0 1px)}
+.p .hdr select, .p .hdr input.save {border:dashed rgba(0,0,0,0.2); border-width:1px}
+.p .hdr select option {background:#fff}
+.p .hdr .controls a {background:rgba(0,0,0,0.1); box-shadow:rgba(255,255,255,0.5) 0 1px}
+.p .hdr .controls a:hover {background-color:#fff; text-decoration:none}
+.p .hdr .controls a:active {background-color:#888}
+.p .body {text-shadow:#fff 0 1px}
+blockquote {background:rgba(0,0,0,0.05); border:solid rgba(0,0,0,0.1); border-width:1px; box-shadow:#fff 0 1px, inset 0 1px 3px #ccc}
+.p .body .emoticon {-webkit-filter:drop-shadow(0 1px 0 #fff); filter:drop-shadow(0 1px 0 #fff)}
+.p div.avatar {padding:5px 0 6px 0}
+/* Deleted posts */
+.deleted, .deleted .hdr, .deleted .hdr a {color:#888}
+.p.deleted {background:#eee; border-color:#eee; box-shadow:none}
+.p.deleted .hdr, .p.deleted .body {box-shadow:inset 0 -1px 0 rgba(0,0,0,0.1)}
+
+/* Reply to a conversation */
+.p .body input.text, .p .body textarea {box-shadow:inset 0 1px 3px #cccccc, 0 1px 0 #ffffff}
+.editButtons .button {border-radius:0}
+.editButtons .big {border-radius:5px; border-top-left-radius:0; border-top-right-radius:0}
+
+/* Formatting buttons */
+.p .controls .formattingButtons a:hover {background-color:#fff; text-decoration:none}
+.p .controls .formattingButtons a:active {background-color:#888}
+
+/* Code, quotes, headers */
+pre {border:1px dashed #bbb}
+code {background:#e6e6e6}
+blockquote {color:#555}
+blockquote cite {border-bottom:1px dashed rgba(0,0,0,0.2)}
+.p .body h3 {border-bottom:1px solid #bbb}
+.p hr {color:#bbb; border:solid #bbb; border-width:1px 0 0}
+
+/* My settings */
+#palette a {box-shadow:0 1px 0 #fff}
+#palette a.selected {height:41px; margin-top:-1px; box-shadow:inset 0 -1px 0 rgba(0, 0, 0, 0.2)}
+
+/* Admin */
+#admin {border-color:#eee; border-image:linear-gradient(180deg, #eee, #fff); border-image-slice:1; background:#fff}
+#admin .menu {border-right:1px solid #ccc}
+#admin .menu li {padding-bottom:5px}
+#admin .menu li a {text-decoration:none; border:solid #ccc; border-width:1px 0 1px 1px; color:#000; background:#efefef; box-shadow:inset 1px 1px 0 #fff, -1px 1px 2px #cdcdcd; text-shadow:#fff 0px 1px}
+#admin .menu li.active a, #admin .menu li:not(.active) a:hover {margin-right:-1px; background:#fff; border:solid #ccc; border-width:1px 0 1px 1px; color:#000; clip-path:inset(-5px 0px -5px -5px)}
+#admin .menu li:not(.active) a:hover {padding-left:15px}
+#admin .inner {border-left:1px solid #ccc}
+#admin .stats li {border-bottom:1px solid #ddd}
+#admin .settingsForm hr {border-style:solid; border-width:1px 0 0; border-color:#ccc}
+.form.logoForm img {border:1px dashed #bbb}
+.form.iconForm img {border:1px solid #ddd}
+
+/* Plugins */
+#plugins .controls a, #plugins .toggle {background:#cdffba; color:#258500}
+#plugins .controls a, #plugins .enabled .toggle {color:#888; background:#e4e4e4}
+#plugins .toggle:hover {background-color:#a3e18c; text-decoration:none}
+#plugins .toggle:active {background-color:#64b346}
+#plugins .enabled .toggle:hover, #plugins .controls a:hover {background-color:#ccc; text-decoration:none}
+#plugins .enabled .toggle:active, #plugins .controls a:active {background-color:#a4a4a4}
+#plugins li {border-bottom:1px solid #ddd}
+#plugins li .settings {background:#fff}
+
+/* Skins */
+#skins a {color:#000}
+#skins a:hover {text-decoration:none}
+#skins .preview {background:#eee; border:1px solid #ddd; color:#ddd}
+#skins a:hover .preview, #skins .enabled .preview {border-color:#aaa}
+
+/* Profile */
+.profile .form li {border-top:1px solid #fff; border-bottom:1px solid rgba(0,0,0,0.1)}
+.profile .form li:first-child {border-top:0}
+
+/* Footer */
+#ftr-content {border-top:1px dashed #ccc}
+#ftr a.external::after {height:9px; margin-left: 2px}
+
+/* Inputs, buttons, and other form elements */
+input.text, textarea {background:#fff; border:1px solid #bbb; box-shadow:inset 0 1px 3px #ccc}
+input.text:focus, textarea:focus {border-color:#777}
+input::placeholder {color:#aaa}
+.placeholder {color:#aaa}
+fieldset {border:1px solid #ccc;box-shadow:inset 0 1px 0px #fff}
+legend {color:#000}
+fieldset legend {text-shadow:0 1px 0 #fff; -webkit-backdrop-filter:blur(3px); backdrop-filter:blur(3px)}
+fieldset legend a {color:#000}
+fieldset.hidden {border-width:1px 0 0}
+fieldset.hidden legend a {color:#666}
+
+/* Buttons */
+.button, .button input {text-shadow:#046b9e 0 -1px}
+.button {background:linear-gradient(#9dcade 25%, #44a2c9 50%, #1e77af 50%, #37dcee 100%); border:1px solid #1a6b9d; border-radius:5px; box-shadow:inset 0 1px 0 #eeeeee}
+.button input {color:#fff}
+.button:hover {box-shadow:inset 0 0 0 2px rgba(255, 255, 255, 0.5),inset 0 1px 0 #eeeeee}
+.button:active {box-shadow:inset 0 0 25px 2px rgba(0, 0, 0, 0.25),inset 0 1px 0 #eeeeee}
+.buttonSmall, .p .body .button {box-shadow:inset 0 1px 0 #eeeeee, 0 1px 0 #ffffff}
+.buttonSmall, .buttonSmall:active, .buttonSmall:hover {background:linear-gradient(#f7f7f7, #d8d9e1); color:#000; text-shadow:#fff 0 1px; border:1px solid #bbb; border-radius:0}
+.buttonSmall:hover, .p .body .button:hover {box-shadow:inset 0 0 0 2px rgba(255, 255, 255, 0.5), inset 0 1px 0 #ffffff, 0 1px 0 #ffffff}
+.buttonSmall:active, .p .body .button:active {box-shadow:inset 0 0 25px 2px rgba(0, 0, 0, 0.25), inset 0 1px 0 #ffffff, 0 1px 0 #ffffff}
+.buttonSmall input, .buttonSmall:active input, .buttonSmall:hover input {color:#000; text-shadow:#fff 0 1px}
+.buttonDisabled, .buttonDisabled:active, .buttonDisabled:hover {background:linear-gradient(#e9ebe8 25%, #d8dad6 50%, #cbceca 50%, #f8faf7 100%); border:1px solid #b2b4b1; box-shadow:inset 0 1px 0 #ffffff}
+.bigDisabled, .bigDisabled:active, .bigDisabled:hover {background:linear-gradient(#e9ebe8 25%, #d8dad6 50%, #cbceca 50%, #f8faf7 100%); border:1px solid #b2b4b1; box-shadow:inset 0 1px 0 #ffffff}
+.buttonDisabled input, .buttonDisabled:active input, .buttonDisabled:hover input {color:#999; text-shadow:#fff 0 1px}
+.bigDisabled input, .bigDisabled:active input, .bigDisabled:hover input {color:#999; text-shadow:#fff 0 1px}
+.p .body .buttonDisabled, .p .body .buttonDisabled:active, .p .body .buttonDisabled:hover, .p .body .bigDisabled, .p .body .bigDisabled:active, .p .body .bigDisabled:hover {box-shadow:inset 0 1px 0 #ffffff, 0 1px 0 #ffffff}
+
+/* Profile and post colors */
+.c1 {--profile-color:#dfdfdf; --post-color:#eeeeee}
+.c2 {--profile-color:#d2d2d2; --post-color:#eeeeee}
+.c3 {--profile-color:#cf9eff; --post-color:#f7eeff}
+.c4 {--profile-color:#b29cff; --post-color:#f1edff}
+.c5 {--profile-color:#a5b1ff; --post-color:#eff1ff}
+.c6 {--profile-color:#adccff; --post-color:#f0f6ff}
+.c7 {--profile-color:#b4e7ff; --post-color:#f1faff}
+.c8 {--profile-color:#93fff1; --post-color:#ecfffc}
+.c9 {--profile-color:#a4ffd4; --post-color:#effff8}
+.c10 {--profile-color:#93ffae; --post-color:#ecfff1}
+.c11 {--profile-color:#b5ff97; --post-color:#f3ffec}
+.c12 {--profile-color:#d4ff95; --post-color:#f8ffec}
+.c13 {--profile-color:#ebff99; --post-color:#fbffed}
+.c14 {--profile-color:#fff391; --post-color:#fffdeb}
+.c15 {--profile-color:#ffdb75; --post-color:#fff9e7}
+.c16 {--profile-color:#ffcd92; --post-color:#fff6ec}
+.c17 {--profile-color:#ffc19b; --post-color:#fff4ed}
+.c18 {--profile-color:#ffa3af; --post-color:#ffeef1}
+.c19 {--profile-color:#ffafdc; --post-color:#fff0f8}
+.c20 {--profile-color:#eba5ff; --post-color:#fcefff}
+.c21 {--profile-color:#c0c0db; --post-color:#f4f4f8}
+.c22 {--profile-color:#abcbcd; --post-color:#f0f5f6}
+.c23 {--profile-color:#b8d9c2; --post-color:#f2f8f4}
+.c24 {--profile-color:#c8d9b8; --post-color:#f6f8f3}
+.c25 {--profile-color:#e5e2ba; --post-color:#fafaf2}
+.c26 {--profile-color:#e7d0bb; --post-color:#fbf7f3}
+.c27 {--profile-color:#cdc5bd; --post-color:#f6f5f3}
+.c tr td.avatar img, .hdr, .p .hdr, #palette a {background:var(--profile-color)}
+.p {background:var(--post-color); border-color:var(--profile-color)}
+
+/* Mobile properties */
+@media only screen and (max-width:1000px) {
+#wrapper {border-left:0; border-right:0}
+}
+
+@media only screen and (max-width:620px) {
+#admin {margin-top:0; border-left:0; border-image:none; background:unset}
+#admin .menu {border-right:0}
+#admin .menu li a {margin-right:0; background-color:#eee; border-right-width:1px}
+#admin .menu li.active a, #admin .menu li:not(.active) a:hover {clip-path:unset; border-right-width:1px}
+}
+
+/* Formatting controls */
+@media only screen and (max-width:570px) {
+.p.l::after, .p.r::after {display:none}
+#cPosts .p .hdr .controls {background:#ddd}
+}
+
+/* esoTalk reply + bar polish */
+#bar {
+  min-height: 34px;
+  padding: 5px 12px;
+  overflow: hidden;
+}
+#bar li a, #bar strong a { color: #222; }
+#bar .button,
+#bar .button input,
+#bar li a span.button,
+.button, input.button {
+  border-radius: 3px !important;
+}
+#bar .button input,
+.button input {
+  line-height: 1.25 !important;
+  padding-top: 1px !important;
+  padding-bottom: 1px !important;
+}
+
+/* Reply form: force correct vertical stack inside .parts */
+#reply.p {
+  clear: both;
+}
+#reply .parts {
+  overflow: hidden; /* contain floats */
+}
+#reply .hdr {
+  display: block !important;
+  width: auto !important;
+  overflow: hidden !important; /* clear internal floats */
+  white-space: normal !important;
+  height: auto !important;
+  min-height: 24px;
+  padding: 6px 10px !important;
+  box-sizing: border-box;
+}
+#reply .hdr .pInfo {
+  float: left !important;
+  margin: 0 !important;
+  max-width: 30%;
+}
+#reply .hdr .controls {
+  float: right !important;
+  max-width: 68%;
+  text-align: right;
+}
+#reply .hdr .controls .formattingButtons {
+  display: inline-block;
+  float: none;
+  margin: 0 4px 0 0;
+  white-space: normal;
+  vertical-align: middle;
+}
+#reply .hdr .controls a {
+  display: inline-block;
+  margin: 1px 2px;
+  vertical-align: middle;
+}
+
+/* Body + textarea under the header, full width of parts */
+#reply .body.edit,
+#reply .body {
+  display: block !important;
+  float: none !important;
+  clear: both !important;
+  width: auto !important;
+  padding: 10px !important;
+  box-sizing: border-box;
+}
+#reply textarea,
+#reply-textarea {
+  display: block !important;
+  width: 100% !important;
+  max-width: 100% !important;
+  min-height: 14em;
+  height: 14em;
+  box-sizing: border-box !important;
+  margin: 0 0 8px 0;
+  resize: vertical;
+}
+#reply .editButtons {
+  display: block;
+  clear: both;
+  overflow: hidden;
+  text-align: right;
+  padding-top: 4px;
+}
+#reply .editButtons .fl { float: left; }
+#reply .editButtons .fr { float: right; }
+
+/* Posts stay full width under #cPosts */
+#cPosts .p {
+  clear: both;
+}
+
+
+
+

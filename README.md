@@ -1,43 +1,30 @@
-## esoTalk – Fat-free forum software
+# esoTalk 1.0.0
 
-**Help develop *Flarum*, esoTalk's successor. [Flarum on GitHub &raquo;](https://github.com/flarum/core)**
+**License:** GNU Affero General Public License v3.0 (AGPLv3) — see `LICENSE`
 
-esoTalk is a free, open-source forum software package built with PHP and MySQL. It is designed to be:
+Línea clásica de esoTalk (`IN_ESO` / mysqli) modernizada para **PHP 8.0–8.4**.
 
- - **Fast.** esoTalk's code was architectured to have little overhead and to be as efficient as possible.
- - **Simple.** All of esoTalk's interfaces are designed around simplicity, ease-of-use, and speed.
- - **Powerful.** Despite its simplicity, a large array of [plugins](http://esotalk.org/plugins) and [skins](http://esotalk.org/skins) are available to extend the functionality of esoTalk.
+Proyecto: **https://github.com/Scoppettuolo**
 
-esoTalk is developed by Toby Zerner in memory of his brother, Simon. 
+Blog / info: **https://katnya.blogspot.com/**
 
-### Donate
+> Esta es la base **1.x** (arquitectura antigua).  
+> La línea **2.0.0** es el código g4/g5.
 
-I've put many hundreds of hours and a lot of love into developing and maintaining esoTalk. If you have benefitted from it, why not consider [donating some schrapnel](http://esotalk.org/donate)? #feedtoby
+## Requisitos
+- PHP ≥ 8.0 con **PDO SQLite** habilitado para la instalación predeterminada
+- **mysqli** para instalaciones alternativas con MySQL 5.7+ / MariaDB 10.3+
 
-### System Requirements
+## Instalación
+1. Copia a `htdocs/esoTalk1` (o similar)
+2. Abre `/install/` en el navegador
+3. Elige el idioma y el controlador en el instalador. **SQLite** se usa por defecto; también puedes seleccionar MySQL/MariaDB mediante **mysqli**.
+4. Si eliges MySQL/MariaDB
 
-esoTalk requires **PHP 5.3+** and a modern version of **MySQL**.
-
-The PHP **gd extension** is required to support avatar uploading.
-
-esoTalk has only been tested on **Apache** and **lighttpd**. If you encounter a problem specific to any other web server, please [create an issue](https://github.com/esotalk/esoTalk/issues).
-
-### Installation
-
-Installing esoTalk is super easy. In brief, simply:
-
-1. [Download esoTalk.](http://esotalk.org/download)
-2. Extract and upload the files to your PHP-enabled web server.
-3. Visit the location in your web browser and follow the instructions in the installer.
-
-### Upgrading
-
-To upgrade esoTalk from an older version, simply:
-
-1. [Download](http://esotalk.org/download) the latest version of esoTalk.
-2. Extract and upload all of the files to your web-server, overwriting old ones. (Be careful that you don't lose custom plugins, skins, and languages you've uploaded to the addons directory, though!)
-3. Visit **your-forum.com/?p=upgrade** in your web browser and watch esoTalk complete the upgrade.
-
-### Troubleshooting
-
-If you are having problems installing esoTalk, view the [Troubleshooting](http://esotalk.org/docs/debug) documentation.
+## Cambios de modernización
+- Login: verificación de contraseña correcta + **upgrade automático** de hashes md5 → bcrypt
+- `verifyPassword()` acepta bcrypt, argon y md5 legado
+- SQLite mediante PDO como motor predeterminado; MySQL/MariaDB mediante mysqli con **InnoDB** y utf8mb4
+- Cookies de sesión: HttpOnly + SameSite=Lax + Secure si hay HTTPS
+- `#[AllowDynamicProperties]` para PHP 8.2+
+- `.htaccess` de protección básica
